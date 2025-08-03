@@ -1,68 +1,150 @@
 ---
 const links = [
-  { label: 'Sitio Web', url: 'https://ejemplo.com/' },
-  { label: 'WhatsApp', url: 'https://github.com/' },
-  { label: 'Instagram', url: 'https://twitter.com/' },
-  { label: 'Tiktok', url: 'https://linkedin.com/' },
+  { label: "Sitio Web", url: "https://ejemplo.com/" },
+  { label: "WhatsApp", url: "https://github.com/" },
+  { label: "Instagram", url: "https://twitter.com/" },
+  { label: "Tiktok", url: "https://linkedin.com/" },
 ];
 ---
 
 <div class="linktree-container">
-  <img src="https://avatars.githubusercontent.com/u/96989277?s=240&v=4" alt="Avatar de matias lenci" class="avatar" />
+  <img
+    src="https://avatars.githubusercontent.com/u/96989277?s=240&v=4"
+    alt="Avatar de matias lenci"
+    class="avatar"
+  />
   <h1>Matias Lenci</h1>
   <!-- <span class="user-name">@matias.lenci.drones</p> -->
-  <p class="bio">Drone Pilot • Content Creator • Sky Explorer 🚁</p>
-  <div class="links">
-    {links.map(link => (
-      <a class="link" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-    ))}
+  <div class="bio">
+    <p style="margin-bottom: 0px;">🚁 Videos Aéreos Profesionales con Dron</p>
+    <p style="margin-top: 0px;">
+      Calidad 4K | Edición Profesional | Entregas Rápidas
+    </p>
+  </div>
+  <div class="links-container">
+    <div class="links">
+      {
+        links.map((link) => (
+          <a
+            class="link"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>
 
 <style>
-.linktree-container {
-  max-width: 400px;
-  margin: 48px auto;
-  padding: 32px 24px;
-  border-radius: 24px;
-  text-align: center;
-  font-family: system-ui, sans-serif;
-}
-.avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  margin-bottom: 16px;
-  border: 3px solid #eee;
-}
-h1 {
-  margin: 0 0 8px 0;
-  font-size: 2rem;
-}
-.user-name{
-  color: #666;
-}
-.bio {
-  color: #222;
-  margin-bottom: 2rem;
-}
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.link {
-  display: block;
-  padding: 14px 0;
-  background: #f3f4f6;
-  border-radius: 12px;
-  color: #222;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-}
-.link:hover {
-  background: #e0e7ef;
-  color: #0077ff;
-}
-</style> 
+  .linktree-container {
+    max-width: 400px;
+    margin: 48px auto;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .linktree-container {
+      max-width: 100%;
+      margin: 0;
+      height: 100vh;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+  }
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid #eee;
+  }
+
+  @media (max-width: 768px) {
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    .bio {
+      margin-bottom: 1.5rem;
+    }
+
+    .links {
+      gap: 12px;
+    }
+  }
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    color: #1a1a1a;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .user-name {
+    color: #666;
+  }
+  .bio {
+    color: #333;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .link {
+    display: block;
+    padding: 14px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition:
+      background 0.2s,
+      color 0.2s,
+      transform 0.2s;
+  }
+  .link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #0077ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+</style>
